@@ -297,6 +297,8 @@ The application will launch in your browser at `http://localhost:8501`.
 
 ---
 
-## 📜 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+##  Link
+
+Live link:
+https://machineguard-ai-m9uuivilvhyxusixvj7h8r.streamlit.app/
