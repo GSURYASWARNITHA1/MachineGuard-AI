@@ -1,0 +1,311 @@
+{
+  "dataset_check": {
+    "rows": {
+      "got": 10000,
+      "uci": 10000,
+      "match": true
+    },
+    "failures": {
+      "got": 339,
+      "uci": 339,
+      "match": true
+    },
+    "HDF": {
+      "got": 115,
+      "uci": 115,
+      "match": true
+    },
+    "PWF": {
+      "got": 95,
+      "uci": 95,
+      "match": true
+    },
+    "OSF": {
+      "got": 98,
+      "uci": 98,
+      "match": true
+    },
+    "TWF": {
+      "got": 46,
+      "uci": 46,
+      "match": true
+    },
+    "RNF": {
+      "got": 19,
+      "uci": 19,
+      "match": true
+    }
+  },
+  "seed": 42,
+  "cost_fn": 10.0,
+  "cost_fp": 1.0,
+  "split": {
+    "train_rows": 8000,
+    "test_rows": 2000,
+    "train_failures": 271,
+    "test_failures": 68
+  },
+  "cv_comparison": [
+    {
+      "model": "LogisticRegression",
+      "features": "raw",
+      "pr_auc": 0.441,
+      "pr_auc_std": 0.0417,
+      "roc_auc": 0.8966,
+      "roc_auc_std": 0.0186,
+      "recall": 0.8033,
+      "recall_std": 0.064,
+      "precision": 0.1362,
+      "precision_std": 0.0082
+    },
+    {
+      "model": "LogisticRegression",
+      "features": "engineered",
+      "pr_auc": 0.4415,
+      "pr_auc_std": 0.0551,
+      "roc_auc": 0.9231,
+      "roc_auc_std": 0.0137,
+      "recall": 0.8378,
+      "recall_std": 0.0475,
+      "precision": 0.1615,
+      "precision_std": 0.0094
+    },
+    {
+      "model": "RandomForest",
+      "features": "raw",
+      "pr_auc": 0.7419,
+      "pr_auc_std": 0.0445,
+      "roc_auc": 0.9679,
+      "roc_auc_std": 0.0128,
+      "recall": 0.5276,
+      "recall_std": 0.0568,
+      "precision": 0.7906,
+      "precision_std": 0.0442
+    },
+    {
+      "model": "RandomForest",
+      "features": "engineered",
+      "pr_auc": 0.8894,
+      "pr_auc_std": 0.0285,
+      "roc_auc": 0.9774,
+      "roc_auc_std": 0.0108,
+      "recall": 0.7946,
+      "recall_std": 0.0494,
+      "precision": 0.9491,
+      "precision_std": 0.0355
+    },
+    {
+      "model": "HistGradientBoosting",
+      "features": "raw",
+      "pr_auc": 0.7487,
+      "pr_auc_std": 0.0462,
+      "roc_auc": 0.9729,
+      "roc_auc_std": 0.0103,
+      "recall": 0.8463,
+      "recall_std": 0.0431,
+      "precision": 0.4022,
+      "precision_std": 0.0294
+    },
+    {
+      "model": "HistGradientBoosting",
+      "features": "engineered",
+      "pr_auc": 0.8964,
+      "pr_auc_std": 0.0232,
+      "roc_auc": 0.9801,
+      "roc_auc_std": 0.0103,
+      "recall": 0.8573,
+      "recall_std": 0.039,
+      "precision": 0.6044,
+      "precision_std": 0.0446
+    }
+  ],
+  "selected": {
+    "model": "HistGradientBoosting",
+    "features": "engineered",
+    "selected_by": "mean CV PR-AUC on training set"
+  },
+  "threshold_selection": {
+    "chosen": 0.34,
+    "oof_cost_at_chosen": 498.0,
+    "oof_cost_at_0.5": 573.0
+  },
+  "test": {
+    "uncalibrated_at_0.5": {
+      "threshold": 0.5,
+      "recall": 0.8824,
+      "precision": 0.6383,
+      "tp": 60,
+      "fp": 34,
+      "fn": 8,
+      "tn": 1898,
+      "cost": 114.0
+    },
+    "calibrated_at_0.5": {
+      "threshold": 0.5,
+      "recall": 0.8382,
+      "precision": 0.9828,
+      "tp": 57,
+      "fp": 1,
+      "fn": 11,
+      "tn": 1931,
+      "cost": 111.0
+    },
+    "calibrated_at_cost_threshold": {
+      "threshold": 0.34,
+      "recall": 0.8529,
+      "precision": 0.9508,
+      "tp": 58,
+      "fp": 3,
+      "fn": 10,
+      "tn": 1929,
+      "cost": 103.0
+    },
+    "pr_auc": 0.9155,
+    "roc_auc": 0.9853,
+    "brier_uncalibrated": 0.01577,
+    "brier_calibrated": 0.00625,
+    "bootstrap_95ci_at_cost_threshold": {
+      "recall": [
+        0.7571,
+        0.9286
+      ],
+      "precision": [
+        0.8871,
+        1.0
+      ],
+      "pr_auc": [
+        0.8471,
+        0.9676
+      ],
+      "roc_auc": [
+        0.9696,
+        0.9962
+      ]
+    },
+    "baseline_always_no_failure": {
+      "accuracy": 0.966,
+      "recall": 0.0
+    }
+  },
+  "per_mode_recall": {
+    "TWF": {
+      "failures": 10,
+      "caught": 2,
+      "recall": 0.2
+    },
+    "HDF": {
+      "failures": 29,
+      "caught": 29,
+      "recall": 1.0
+    },
+    "PWF": {
+      "failures": 13,
+      "caught": 13,
+      "recall": 1.0
+    },
+    "OSF": {
+      "failures": 16,
+      "caught": 16,
+      "recall": 1.0
+    }
+  },
+  "unlabeled_failures_in_test": {
+    "n": 2,
+    "caught": 0
+  },
+  "noise_robustness": [
+    {
+      "noise_frac_of_std": 0.0,
+      "pr_auc": 0.9155,
+      "recall": 0.8529
+    },
+    {
+      "noise_frac_of_std": 0.02,
+      "pr_auc": 0.8735,
+      "recall": 0.8162
+    },
+    {
+      "noise_frac_of_std": 0.05,
+      "pr_auc": 0.8102,
+      "recall": 0.7632
+    },
+    {
+      "noise_frac_of_std": 0.1,
+      "pr_auc": 0.7194,
+      "recall": 0.7044
+    },
+    {
+      "noise_frac_of_std": 0.2,
+      "pr_auc": 0.4938,
+      "recall": 0.5838
+    }
+  ],
+  "leave_one_type_out": [
+    {
+      "held_out_type": "L",
+      "n": 6000,
+      "failures": 235,
+      "pr_auc": 0.7512,
+      "recall_at_0.5": 0.6596,
+      "precision_at_0.5": 0.625
+    },
+    {
+      "held_out_type": "M",
+      "n": 2997,
+      "failures": 83,
+      "pr_auc": 0.7201,
+      "recall_at_0.5": 0.7952,
+      "precision_at_0.5": 0.5197
+    },
+    {
+      "held_out_type": "H",
+      "n": 1003,
+      "failures": 21,
+      "pr_auc": 0.8149,
+      "recall_at_0.5": 0.8095,
+      "precision_at_0.5": 0.5
+    }
+  ],
+  "permutation_importance_pr_auc_drop": [
+    {
+      "feature": "torque",
+      "drop": 0.7558,
+      "std": 0.0082
+    },
+    {
+      "feature": "rpm",
+      "drop": 0.5638,
+      "std": 0.0296
+    },
+    {
+      "feature": "air_temp",
+      "drop": 0.4833,
+      "std": 0.0306
+    },
+    {
+      "feature": "tool_wear",
+      "drop": 0.3673,
+      "std": 0.0389
+    },
+    {
+      "feature": "proc_temp",
+      "drop": 0.2903,
+      "std": 0.023
+    },
+    {
+      "feature": "type_L",
+      "drop": 0.02,
+      "std": 0.011
+    },
+    {
+      "feature": "type_H",
+      "drop": 0.0005,
+      "std": 0.0001
+    },
+    {
+      "feature": "type_M",
+      "drop": -0.0008,
+      "std": 0.0006
+    }
+  ]
+}
