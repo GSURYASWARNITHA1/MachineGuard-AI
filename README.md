@@ -30,10 +30,15 @@ Traditional industrial operations typically rely on two maintenance approaches:
 > **No live factory trial or physical hardware deployment is claimed.** All performance figures reported are authentic, reproducible evaluations on the held-out test split of this synthetic benchmark.
 
 ---
-##  Link
+##  Live link
 
-Live link:
+link:
 https://machineguard-ai-m9uuivilvhyxusixvj7h8r.streamlit.app/
+
+##  Demo Video
+
+link:
+https://drive.google.com/file/d/13p-cUfiV3eDjc4aoWVBAxqQCKdOlZkGO/view?usp=drivesdk
 
 ## 🚀 Key Features
 
